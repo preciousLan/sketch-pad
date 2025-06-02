@@ -1,4 +1,4 @@
-document.getElementById("upload-img");
+const uploadImage = document.getElementById("upload-img");
 
 const imageLayer = document.querySelector(".image-layer");
 const drawLayer = document.querySelector(".draw-layer");
@@ -64,3 +64,13 @@ function endDraw() {
   drawing = false;
   drawCont.closePath();
 }
+
+//upload image to the imagecont
+uploadImage.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const img = new image();
+  img.onload = () =>
+    imageCtx.drawImage(img, 0, 0, imageCanvas.width, imageCanvas.height);
+  img.src = URL.createObjectURL(file);
+});
