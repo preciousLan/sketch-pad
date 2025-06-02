@@ -119,7 +119,6 @@ function saveDrawing() {
   finalCanvas.width = imageLayer.width;
   finalCanvas.height = imageLayer.height;
   const ctx = finalCanvas.getContext("2d");
-  ctx.drawImage(imageLayer, 0, 0);
   ctx.drawImage(drawLayer, 0, 0);
   const link = document.createElement("a");
   link.download = "drawing.png";
