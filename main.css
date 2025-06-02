@@ -121,18 +121,19 @@ input[type="file"] {
 
 }
 
-.container .saveDrawing button {
-    text-align: center;
+ .saveDrawing button {
+    display: flex;
+    align-items: center;
     background: green;
     border-radius: 4px;
-    width: 50px;
+   padding: 5px 10px;
     height: 20px;
     color: aliceblue;
     border: none;
     cursor: pointer;
 }
 
-.container .saveDrawing button:hover {
+ .saveDrawing button:hover {
     opacity: 0.8;
 }
 
