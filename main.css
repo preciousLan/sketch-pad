@@ -43,8 +43,8 @@
     font-size: 14px;
     background: black;
     color: aliceblue;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -62,13 +62,18 @@
     transition: 0.1s ease-out;
 }
 
+.container .tools button.active{
+     background-color: #4caf50; /* green highlight */
+  color: white;
+}
+
 input[type="file"] {
     border: 1px solid black;
     cursor: pointer;
     background: #c5d7d3;
 }
 
-#brushSize {
+.brushSize {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -77,14 +82,14 @@ input[type="file"] {
 
 
 
-#brushSize label {
+.brushSize label {
     margin-right: 10px;
     background: #fff;
     padding: 3px 8px;
     border-radius: 4px;
 }
 
-#brushSize label:hover {
+.brushSize label:hover {
     opacity: 0.9;
 }
 
@@ -131,6 +136,7 @@ input[type="file"] {
     color: aliceblue;
     border: none;
     cursor: pointer;
+    gap: 5px;
 }
 
  .saveDrawing button:hover {
@@ -159,6 +165,25 @@ input[type="file"] {
 
 .canva-container .draw-layer{
     z-index:1;
+}
+
+.draw-layer.eraser-cursor {
+  cursor: none !important;
+  position: relative;
+}
+.draw-layer.eraser-cursor::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 2px solid #b0b0b0;
+  background: rgba(176,176,176,0.3);
+  width: var(--eraser-size, 32px);
+  height: var(--eraser-size, 32px);
+  left: var(--eraser-x, -100px);
+  top: var(--eraser-y, -100px);
+  z-index: 10;
+  display: block;
 }
 
 

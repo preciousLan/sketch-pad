@@ -20,9 +20,9 @@
     <div class="container">
       <aside>
         <div class="tools">
-          <button onclick="selectTool('pen')">Pen</button>
-          <button onclick="selectTool('eraser')">Eraser</button>
-          <button onclick="selectTool('fill')">Fill</button>
+          <button class="tool-btn" data-tool="pen" id="penTool"><i class="fa-solid fa-pencil"></i></button>
+          <button class="tool-btn" data-tool="eraser" id="eraserTool"><i class="fa-solid fa-eraser"></i></button>
+          <button class="tool-btn" data-tool="fill" id="fillTool"><i class="fa-solid fa-fill-drip"></i></button>
         </div>
 
         <div class="color-label">
@@ -30,18 +30,18 @@
           <input type="color" id="brushColor" value="#000000" />
         </div>
 
-        <div id="brushSize">
+        <div class="brushSize">
           <label for="brushSize"> Brush-Size:</label>
-          <input type="range" id="brushSize" min="1" max="50" />
+          <input type="range" id="brushSize" min="0.1" max="50" value="2" step="0.1" />
         </div>
 
         
         <input type="file" id="upload-img" accept="image/*" />
 
         <div class="saveDrawing">
-          <button onclick="undo()">Undo</button>
-          <button onclick="redo()">Redo</button>
-          <button onclick="saveDrawing()">Download</button>
+          <button onclick="undo()"><i class="fa-solid fa-rotate-left"></i> Undo</button>
+          <button onclick="redo()">Redo <i class="fa-solid fa-arrow-rotate-right"></i></button>
+          <button onclick="saveDrawing()"><i class="fa-solid fa-download"></i>Download</button>
         </div>
       </aside>
 
